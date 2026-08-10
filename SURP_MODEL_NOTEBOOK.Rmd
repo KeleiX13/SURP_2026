@@ -1,0 +1,58 @@
+---
+title: "SURP_PROJECT"
+output: html_document
+date: "2026-07-27"
+---
+
+```{r}
+#STEP 1: LOAD LIBRARY AND DATA
+library(dplyr)
+library(readr)
+
+pre <- read_csv("pre_eharmonize_FA.csv")
+qc  <- read_csv("participant_qc_metrics.csv")
+```
+
+```{r}
+#STEP 2: QC FILTER THE DATA
+# QC filter (IQR 5)
+qc_pass <- qc %>%
+  filter(raw_num_bad_slices  <= 269.50,
+         mean_fd             <= 1.3659,
+         raw_neighbor_corr   >= 0.7765,
+         max_rel_translation <= 1.6286,
+         CNR3_mean           >= 0.4196,
+         CNR4_mean           >= 0.2491) %>%
+  pull(subjectID)
+
+# drop anyone without sex information or didn't pass QC.
+d <- pre %>%
+  filter(!is.na(Sex), subjectID %in% qc_pass) %>%
+  left_join(qc %>% select(subjectID, mean_fd), by = "subjectID") %>%
+  mutate(PSS  = factor(if_else(prodromal_psychosis, "PSS", "NonPSS"),
+                       levels = c("NonPSS", "PSS")),
+         SexF = factor(if_else(Sex == 1, "Male", "Female"),
+                       levels = c("Female", "Male")))
+```
+
+```{r}
+#STEP 3: MAKING THE DATA --> PRIMARY OUTCOMES
+# Primary outcomes: PSS effects on FA with age, sex and mean FD as covariates
+summary(lm(AverageFA_FA ~ PSS + Age + SexF + mean_fd, data = d))
+```
+
+```{r}
+#STEP 4: OUTCOMES FOR PSS AND SEX (external capsule)
+# Exploratory outcomes: PSS*Sex interaction, Males
+dm <- d %>% filter(SexF == "Male", !is.na(EC_FA))
+fm <- lm(EC_FA ~ PSS + Age + mean_fd, data = dm)
+summary(fm)
+```
+
+```{r}
+# Exploratory outcomes: PSS*Sex interaction, Females
+df_ <- d %>% filter(SexF == "Female", !is.na(EC_FA))
+ff  <- lm(EC_FA ~ PSS + Age + mean_fd, data = df_)
+summary(ff)
+```
+
