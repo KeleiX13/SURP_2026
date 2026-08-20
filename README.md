@@ -26,24 +26,37 @@ Dataset: The .csv files utilized in this project are available in /projects/kexi
 
 
 Contact People:
+
 Principal Investigator: Erin Dickie, Stephanie Ameis
+
 Primary: Kelei Xiao - kelei131415@gmail.com
+
 Others: Jiya Shah - jiya.shah@mail.utoronto.ca, Shane Cleary - Shane.cleary@camh.ca
+
 Citation: 
 
 System:
+
 Dependencies: None
+
 RanFrom: SCC
 
 Commands/Scripts:
+
 Model: Primary outcomes of study; outputs effect sizes for PSS effects on global FA, adjusted by age, sex, and motion during baseline scan.
+
 exploratory_outcomes: Exploratory outcomes of study; outputs tract-level sex-by-PSS effect sizes.
+
 ggseg: plots sex-by-PSS effect sizes using ggseg on a visual.
+
 plots/EC_boxplot: makes a boxplot for the exploratory outcomes for external capsule only, as it was the only statistically significant effect size.
+
 plots/scatter_plot: makes a scatter plot for the primary outcomes of the study.
 
 Quality Control:
+
 Primary: Kelei Xiao - kelei131415@gmail.com, John Lio - johnliosb@gmail.com
+
 QCfile: ./projects/kexiao/QC_output
 
 Data Requests/Publications: N/A
