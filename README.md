@@ -18,4 +18,39 @@ There was no significant difference in PSS vs non-PSS youth for average FA (d=-0
 Conclusions:
 Though there was no significant effect of PSS status on global FA values in our analyses, a significant sex-by-PSS effect was found. Future research should aim to further explore the role of sex as a potential moderator in tract-level FA differences among youth with PSS.
 
+-----------------------------------------------------------------------------------
+
+Date Processed: 06-01-2026 to 08-20-2026
+
+Dataset:
+
+
+Contact People:
+    Principal Investigator: Erin Dickie, Stephanie Ameis
+    Primary: Kelei Xiao - kelei131415@gmail.com
+    Others: Jiya Shah - jiya.shah@mail.utoronto.ca, Shane Cleary - Shane.cleary@camh.ca
+    Citation: 
+
+System:
+    Dependencies:
+        source /external/rprshnas01/tigrlab/quarantine/scc_modules.sh
+        module load python/3.6_boutiques-0.5.20
+        module load nextflow
+        export NXF_VER=20.10.0
+        module load tools/Singularity/3.5.3
+    RanFrom: SCC
+
+Commands/Scripts:
+    Model: Primary outcomes of study; outputs effect sizes for PSS effects on global FA, adjusted by age, sex, and motion during baseline scan.
+    exploratory_outcomes: Exploratory outcomes of study; outputs tract-level sex-by-PSS effect sizes.
+    ggseg: plots sex-by-PSS effect sizes using ggseg on a visual.
+    plots/EC_boxplot: makes a boxplot for the exploratory outcomes for external capsule only, as it was the only statistically significant effect size.
+    plots/scatter_plot: makes a scatter plot for the primary outcomes of the study.
+
+Quality Control:
+    Primary: Kelei Xiao - kelei131415@gmail.com, John Lio - johnliosb@gmail.com
+    QCfile: ./projects/kexiao/QC_output
+
+Data Requests/Publications: N/A
+
 Note: The .csv files utilized in this project are available in /projects/kexiao/SURP_2026.
