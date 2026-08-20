@@ -44,8 +44,6 @@ Primary: Kelei Xiao - kelei131415@gmail.com
 
 Others: Jiya Shah - jiya.shah@mail.utoronto.ca, Shane Cleary - Shane.cleary@camh.ca
 
-Citation: 
-
 -----------------------------------------------------------------------------------
 
 System:
