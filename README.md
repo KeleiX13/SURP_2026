@@ -22,7 +22,7 @@ Though there was no significant effect of PSS status on global FA values in our 
 
 Date Processed: 06-01-2026 to 08-20-2026
 
-Dataset:
+Dataset: The .csv files utilized in this project are available in /projects/kexiao/SURP_2026.
 
 
 Contact People:
@@ -32,12 +32,7 @@ Contact People:
     Citation: 
 
 System:
-    Dependencies:
-        source /external/rprshnas01/tigrlab/quarantine/scc_modules.sh
-        module load python/3.6_boutiques-0.5.20
-        module load nextflow
-        export NXF_VER=20.10.0
-        module load tools/Singularity/3.5.3
+    Dependencies: None
     RanFrom: SCC
 
 Commands/Scripts:
@@ -52,5 +47,3 @@ Quality Control:
     QCfile: ./projects/kexiao/QC_output
 
 Data Requests/Publications: N/A
-
-Note: The .csv files utilized in this project are available in /projects/kexiao/SURP_2026.
