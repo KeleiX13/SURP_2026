@@ -20,9 +20,19 @@ Though there was no significant effect of PSS status on global FA values in our 
 
 -----------------------------------------------------------------------------------
 
+About Me: Hi! I'm Kelei, and I am heading into my fourth year in the Honours Health Sciences program at McMaster University. This repository documents my work over summer 2026, where I investigated differences in Fractional Anisotropy amongst youth in the TAY cohort study at the Kimel lab as a part of the Institute of Medical Sciences Summer Undergraduate Research Program (IMS SURP) at the University of Toronto. I was co-supervised by Drs. Erin Dickie and Stephanie Ameis, and presented this work at the IMS SURP Research Day in August 2026. If you need any additional information/data from this work, you can reach me via email at kelei131415@gmail.com.
+
+-----------------------------------------------------------------------------------
+
 Date Processed: 06-01-2026 to 08-20-2026
 
 Dataset: The .csv files utilized in this project are available in /projects/kexiao/SURP_2026.
+
+Poster: The poster produced for this work as a part of the IMS SURP 2026 at the University of Toronto is available in this repository as Kelei_Xiao_poster.pptx.
+
+Project Proposal: https://docs.google.com/document/d/1dCtafIN3PsrnUkHuwvNLuOchfotMiNjaZnswgBI8sLE/edit?usp=sharing
+
+Project Abstract: https://docs.google.com/document/d/1NvvIBxqvJt49gGWjnggIVFnAZrOJaeoD/edit?usp=sharing&ouid=100623214198393372326&rtpof=true&sd=true
 
 -----------------------------------------------------------------------------------
 
@@ -42,7 +52,7 @@ System:
 
 Dependencies: None
 
-RanFrom: SCC
+RanFrom: Kimel
 
 -----------------------------------------------------------------------------------
 
