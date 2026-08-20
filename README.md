@@ -28,6 +28,8 @@ Date Processed: 06-01-2026 to 08-20-2026
 
 Dataset: The .csv files utilized in this project are available in /projects/kexiao/SURP_2026.
 
+CONSORT Diagram: The CONSORT Diagram for this project is available in this repository as CONSORT.png.
+
 Poster: The poster produced for this work as a part of the IMS SURP 2026 at the University of Toronto is available in this repository as Kelei_Xiao_poster.pptx.
 
 Project Proposal: https://docs.google.com/document/d/1dCtafIN3PsrnUkHuwvNLuOchfotMiNjaZnswgBI8sLE/edit?usp=sharing
