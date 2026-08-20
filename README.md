@@ -24,6 +24,7 @@ Date Processed: 06-01-2026 to 08-20-2026
 
 Dataset: The .csv files utilized in this project are available in /projects/kexiao/SURP_2026.
 
+-----------------------------------------------------------------------------------
 
 Contact People:
 
@@ -35,6 +36,7 @@ Others: Jiya Shah - jiya.shah@mail.utoronto.ca, Shane Cleary - Shane.cleary@camh
 
 Citation: 
 
+-----------------------------------------------------------------------------------
 
 System:
 
@@ -42,6 +44,7 @@ Dependencies: None
 
 RanFrom: SCC
 
+-----------------------------------------------------------------------------------
 
 Commands/Scripts:
 
@@ -55,6 +58,7 @@ plots/EC_boxplot: makes a boxplot for the exploratory outcomes for external caps
 
 plots/scatter_plot: makes a scatter plot for the primary outcomes of the study.
 
+-----------------------------------------------------------------------------------
 
 Quality Control:
 
@@ -62,5 +66,6 @@ Primary: Kelei Xiao - kelei131415@gmail.com, John Lio - johnliosb@gmail.com
 
 QCfile: ./projects/kexiao/QC_output
 
+-----------------------------------------------------------------------------------
 
 Data Requests/Publications: N/A
