@@ -25,7 +25,7 @@ to_long <- function(df, stage) {
     )
 }
 
-# For one region slice: fit raw & adjusted interaction models, pull PSS:Sex term
+# For one region slice, fit raw & adjusted interaction models, pull sex-by-PSS term
 interaction_stats <- function(d) {
   sd_fa <- sd(d$FA, na.rm = TRUE)                 # for standardizing the coefficient
   term  <- "PSSPSS:SexFMale"                      # the PSS x Sex interaction term
