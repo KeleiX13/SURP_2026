@@ -20,7 +20,7 @@ Though there was no significant effect of PSS status on global FA values in our 
 
 -----------------------------------------------------------------------------------
 
-About Me: Hi! I'm Kelei, and I am heading into my fourth year in the Honours Health Sciences program at McMaster University. This repository documents my work over summer 2026, where I investigated differences in Fractional Anisotropy amongst youth in the TAY cohort study at the Kimel lab as a part of the Institute of Medical Sciences Summer Undergraduate Research Program (IMS SURP) at the University of Toronto. I was co-supervised by Drs. Erin Dickie and Stephanie Ameis, and presented this work at the IMS SURP Research Day in August 2026. If you need any additional information/data from this work, you can reach me via email at kelei131415@gmail.com.
+About Me: Hi! I'm Kelei, and I am an undergraduate student in the Honours Health Sciences program at McMaster University. This repository documents my work over summer 2026, where I investigated differences in Fractional Anisotropy amongst youth in the TAY cohort study at the Kimel lab as a part of the Institute of Medical Sciences Summer Undergraduate Research Program (IMS SURP) at the University of Toronto. I was co-supervised by Drs. Erin Dickie and Stephanie Ameis, and presented this work at the IMS SURP Research Day in August 2026. If you need any additional information/data from this work, you can reach me via email at kelei131415@gmail.com.
 
 -----------------------------------------------------------------------------------
 
