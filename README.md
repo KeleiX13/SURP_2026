@@ -66,6 +66,8 @@ Primary: Kelei Xiao - kelei131415@gmail.com, John Lio - johnliosb@gmail.com
 
 QCfile: ./projects/kexiao/QC_output
 
+FA QC Cutoffs: https://docs.google.com/document/d/1yycSF4Fv2JbNO29ql8oUKD6jdeceZxJmQRsMmRZ4HCg/edit?tab=t.0
+
 -----------------------------------------------------------------------------------
 
 Data Requests/Publications: N/A
