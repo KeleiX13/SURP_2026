@@ -78,7 +78,7 @@ QCfile: ./projects/kexiao/QC_output
 
 FA QC Cutoffs: https://docs.google.com/document/d/1yycSF4Fv2JbNO29ql8oUKD6jdeceZxJmQRsMmRZ4HCg/edit?tab=t.0
 
-QC Instructions: https://hackmd.io/@slimnsour/SyUSEcpbGg
+Visual QC Instructions: https://hackmd.io/@slimnsour/SyUSEcpbGg
 
 -----------------------------------------------------------------------------------
 
