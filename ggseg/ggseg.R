@@ -6,10 +6,7 @@ library(stringr)
 library(ggseg)
 library(ggplot2)
 
-# =============================================================================
-# STEP 0 — DATA (unchanged, and verified correct against your QC file:
-#           Sex == 1 <-> "male" for 243/243 cross-matched subjectIDs)
-# =============================================================================
+# read data
 fa <- read_csv("pre_eharmonize_FA.csv", show_col_types = FALSE)
 qc <- read_csv("participant_qc_metrics.csv", show_col_types = FALSE)
 
@@ -68,42 +65,29 @@ eff <- map %>%
   crossing(Sex = c("Male", "Female")) %>%
   mutate(d = mapply(cohens_d, col, Sex))
 
-# =============================================================================
-# STEP 1 — DIAGNOSE THE ATLAS FIRST (do this before touching the plot code)
-# This is almost certainly why most tracts vanish: geom_brain() drops any
-# row whose region/hemi text doesn't EXACTLY match the atlas's own strings,
-# with no warning. Run this block and actually read the output.
-# =============================================================================
+#read atlas, and figure out if there's anything we need to patch
+
 jhu_wm_atlas <- readRDS("jhu_wm_atlas.rds")
 
-print(jhu_wm_atlas)                 # brain_atlas print method: type, n regions, views
+print(jhu_wm_atlas)             
 atlas_regions <- brain_regions(jhu_wm_atlas)
 atlas_labels  <- brain_labels(jhu_wm_atlas)
 print(atlas_regions)
 print(atlas_labels)
 
-# What hemi values does the atlas actually use? (left/right/midline? Left/Right?
-# bilateral? something else for the corpus callosum pieces?)
 print(unique(as_tibble(jhu_wm_atlas$data)$hemi))
 
-# Does it have multiple "views" (tract atlases are often stored as slices —
-# e.g. axial_1, axial_2, sagittal — and only ONE view renders by default
-# unless you tell position_brain() to lay all of them out)
 tryCatch(print(ggseg.formats::atlas_views(jhu_wm_atlas)),
          error = function(e) message("atlas_views() not available in your ggseg version"))
 
-# The moment of truth — which of YOUR region names actually exist in the atlas?
-cat("\nRegions in your `map` NOT found in the atlas (these silently disappear):\n")
+cat("\nRegions in your `map` NOT found in the atlas\n")
 print(setdiff(unique(map$region), atlas_regions))
 
 cat("\nRegions in the atlas you're NOT currently using:\n")
 print(setdiff(atlas_regions, unique(map$region)))
 
-# =============================================================================
-# STEP 2A — ROBUST PATCH to your existing custom atlas
-# Case/whitespace-proofs the join and tells you exactly what's still missing
-# after that, instead of failing silently.
-# =============================================================================
+#add what we need
+         
 norm <- function(x) str_squish(str_to_lower(x))
 
 atlas_lookup <- as_tibble(jhu_wm_atlas$data) %>%
@@ -132,23 +116,9 @@ p1 <- ggplot(eff_final |> group_by(Sex)) +
                        midpoint = 0, name = "Cohen's d\n(PSS - non-PSS)") +
   theme_void()
 
-# If it's STILL flipped after all tracts are showing, uncomment this —
-# custom sf atlases built from a NIfTI slice commonly need a y-flip:
-# p1 <- p1 + scale_y_reverse()
-
 print(p1)
 ggsave("pss_effect_brain_patched.png", p1, width = 8, height = 8, dpi = 300, bg = "white")
 
-# =============================================================================
-# STEP 2B — RECOMMENDED: use the maintained JHU atlas package instead of your
-# custom RDS. Its region names already match the ICBM-DTI-81 convention
-# you're using (ACR, ALIC, SLF, etc.), and its geometry/orientation is tested
-# by the ggseg maintainers, so this sidesteps both bugs at the source.
-#
-# install once:
-# options(repos = c(ggseg = "https://ggseg.r-universe.dev", CRAN = "https://cloud.r-project.org"))
-# install.packages("ggsegJHU")
-# =============================================================================
 library(ggsegJHU)
 
 cat("\nRegions available in jhu_tracts():\n")
